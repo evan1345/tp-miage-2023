@@ -3,9 +3,9 @@
 ## Nom du(des) étudiant(e)(s) de ce monôme/binôme 
 WARNING: NE PAS OUBLIER DE MENTIONNER LES DEUX NOMS SI VOUS ETES EN BINOME!
 
-#XXX# (et #YYY#)
+#Eugénie SHEKA# et #Evan JOUBERT#
 
-Commentaires éventuels des étudiants : #XXXXXX#
+Commentaires éventuels des étudiants : #C'est sur ce projet git que nous avons ajouter nos modifications ,ce n est pas encore la version finale #
 
 ## Pré-requis 
 
@@ -43,20 +43,28 @@ TIP: [Rappel Git] Trois dépôts sont ici utilisés: le dépot Github de l'ensei
 * Observer le code du projet `todolist-debut-ex1`
 
 *Le code est-il structuré en couches ? Quel problèmes ce code peut-il poser ?*
+*R/ Oui le code est structuré en couche parce que nous pouvons clairement voir une séparation applicative.Nous avons une couche d'accès aux données,une couche Métier.Certaines couches sont melangées c'est à dire certaines responsabilitées ne sont pas clairement défini *
+
 
 *Où se trouve le code métier (voir la règle de gestion RG 1) ?*
+*R/ le code métier se trouve dans la classe TodoListController*
 
 *Cette règle est-elle facilement testable par un test unitaire ?*
+*R/Oui car elle est contenue dans une méthode isolée de la classe TodoList Controller*
 
 * Lancer une base PostgreSQL en Docker dans un terminal (on lance ici la base en mode interactif pour visualiser son activité. Pour la lancer en tâche de fond, remplacer les options `it` par `d` comme 'daemon'):
 ```bash
 docker run -it -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 ```
 *Expliquer cette ligne de commande (y compris les options utilisées)*
+*R/cette ligne de commande est utilisé pour demarrer une instance de contenneur Docker pour le systèlme de gestion de base de données PostgreSql*
+
 
 * Compléter le code manquant dans la méthode `TodoListController.createTodoItem()`
 
 *Pourquoi `todoItemRepository` est-il `null` ? Quelle est la meilleure façon de l'injecter ?*
+*R. Le champ todoItemRepository est null car il n'a pas été injecté dans la classe TodoListController. La meilleure façon de l'injecter est de le faire via le constructeur de la classe, en utilisant l'injection de dépendance de Spring*
+
 
 * Modifier le code en conséquence.
 
@@ -98,6 +106,11 @@ Source : http://leanpub.com/get-your-hands-dirty-on-clean-architecture[Tom Hombe
   - la couche `domain` qui contient les entités (au sens DDD, pas au sens JPA). En général des classes complexes (méthodes riches, relations entre les entités)
 
 *Rappeler en quelques lignes les grands principes de l'architecture hexagonale.*
+*R/Dans l'architecture hexagonal La logique métier est isolée du code d'infrastructure, de sorte que les changements apportés à l'un        n'affectent pas l'autre.
+    Le code métier est représenté par des ports, qui sont des interfaces qui définissent les opérations que le système doit effectuer.
+    Les adaptateurs sont des implémentations de ces ports, qui permettent au système de communiquer avec les différentes technologies qu'il utilise.
+    Les dépendances sont inversées, de sorte que les ports ne dépendent pas des adaptateurs, mais l'inverse. *
+
 
 Compléter ce code avec une fonctionnalité de création de `TodoItem`  persisté en base et appelé depuis un endpoint REST `POST /todos` qui :
 
@@ -114,6 +127,11 @@ _Temps estimé : 20 mins_
 * Implémenter (en junit) des TU sur la règle de gestion qui consiste à afficher `[LATE!]` dans la description d'un item en retard de plus de 24h.
 
 *Quels types de tests devra-t-on écrire pour les adapteurs ?* 
+*R Tests d'intégration : pour vérifier que l'adaptateur fonctionne correctement avec les technologies externes qu'il utilise (par exemple,la base de données).
+    Tests de performance : pour vérifier que l'adaptateur répond aux exigences de performance.
+    Tests de sécurité : pour vérifier que l'adaptateur met en œuvre les mesures de sécurité appropriées.
+    Tests de charge : pour vérifier que l'adaptateur fonctionne correctement sous des charges élevées.*
+
 
 *S'il vous reste du temps, écrire quelques uns de ces types de test.*
 
