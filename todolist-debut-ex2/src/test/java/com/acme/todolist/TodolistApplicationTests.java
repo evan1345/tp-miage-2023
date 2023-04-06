@@ -20,7 +20,7 @@ class TodolistApplicationTests {
 
 
 	@Test
-	public void testRG1Bon() {
+	public void testRG1Late() {
 
 		// Créer un objet TodoItem avec une date et une note pour la règle RG1
 		TodoItem item = new TodoItem("1", Instant.now().minus(2, ChronoUnit.DAYS), "Faire les courses");
@@ -31,7 +31,7 @@ class TodolistApplicationTests {
 	}
 	
 	@Test
-	public void testRG1Mauvais() {
+	public void testRG1NotLate() {
 
 		// Créer un objet TodoItem avec une date et une note pour la règle RG1
 		TodoItem item = new TodoItem("1", Instant.now(), "Faire les courses");
