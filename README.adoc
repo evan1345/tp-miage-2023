@@ -57,7 +57,17 @@ TIP: [Rappel Git] Trois dépôts sont ici utilisés: le dépot Github de l'ensei
 docker run -it -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 ```
 *Expliquer cette ligne de commande (y compris les options utilisées)*
-*R/cette ligne de commande est utilisé pour demarrer une instance de contenneur Docker pour le systèlme de gestion de base de données PostgreSql*
+*R/cette ligne de commande est utilisé pour demarrer une instance de contenneur Docker pour le systèlme de gestion de base de données PostgreSql
+   
+   Les options utilisées sont les suivantes :
+   
+    "-it": cCeci spécifie que le conteneur doit être exécuté en mode interactif et avec un pseudo-tty attaché. Dans le but pour l'utilisateur d'interagir avec le conteneur via le terminal.
+
+    "-e POSTGRES_PASSWORD=password": elle définit une variable d'environnement dans le conteneur appelée "POSTGRES_PASSWORD" et lui donne la valeur "password". Cette variable est utilisée dans le but de spécifier le mot de passe de l'utilisateur "postgres" au moment de la configuration de la base de données PostgreSQL.
+
+    "-p 5432:5432": elle définit le port de communication entre le conteneur et le système hôte. Le port 5432 de l'hôte est mappé sur le port 5432 du conteneur.
+    
+    "postgres": Ceci correspond à l'image Docker à partir de laquelle le conteneur est créé. Dans ce cas, il s'agit de l'image officielle de PostgreSQL.*
 
 
 * Compléter le code manquant dans la méthode `TodoListController.createTodoItem()`
