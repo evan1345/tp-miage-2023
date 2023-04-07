@@ -5,7 +5,7 @@ WARNING: NE PAS OUBLIER DE MENTIONNER LES DEUX NOMS SI VOUS ETES EN BINOME!
 
 #Eugénie SHEKA# et #Evan JOUBERT#
 
-Commentaires éventuels des étudiants : #C'est sur ce projet git que nous avons ajouter nos modifications ,ce n est pas encore la version finale #
+Commentaires éventuels des étudiants : #C'est sur ce projet git que nous avons ajouter nos modifications#
 
 ## Pré-requis 
 
